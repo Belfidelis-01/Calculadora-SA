@@ -1,11 +1,11 @@
-import * as calculoModel from '../models/calculoModel.js';
+import * as calculoModel from '../Models/modelsCalc.js';
 
 
 const validarNumeros = (a, b) => {
     return typeof a === 'number' && !isNaN(a) && typeof b === 'number' && !isNaN(b);
 };
 
-export const somarController = (req, res) => {
+export const somar = (req, res) => {
     const { a, b } = req.body;
     if (!validarNumeros(a, b)) return res.status(400).json({ erro: 'Os valores "a" e "b" precisam ser números.' });
 
@@ -13,7 +13,7 @@ export const somarController = (req, res) => {
     return res.json({ resultado });
 };
 
-export const subtrairController = (req, res) => {
+export const subtrair = (req, res) => {
     const { a, b } = req.body;
     if (!validarNumeros(a, b)) return res.status(400).json({ erro: 'Os valores "a" e "b" precisam ser números.' });
 
@@ -21,7 +21,7 @@ export const subtrairController = (req, res) => {
     return res.json({ resultado });
 };
 
-export const multiplicarController = (req, res) => {
+export const multiplicar = (req, res) => {
     const { a, b } = req.body;
     if (!validarNumeros(a, b)) return res.status(400).json({ erro: 'Os valores "a" e "b" precisam ser números.' });
 
@@ -29,7 +29,7 @@ export const multiplicarController = (req, res) => {
     return res.json({ resultado });
 };
 
-export const dividirController = (req, res) => {
+export const dividir = (req, res) => {
     const { a, b } = req.body;
     if (!validarNumeros(a, b)) return res.status(400).json({ erro: 'Os valores "a" e "b" precisam ser números.' });
 
@@ -42,7 +42,7 @@ export const dividirController = (req, res) => {
     return res.json({ resultado });
 };
 
-export const potenciacaoController = (req, res) => {
+export const potenciacao = (req, res) => {
     const { a, b } = req.body;
     if (!validarNumeros(a, b)) return res.status(400).json({ erro: 'Os valores "a" e "b" precisam ser números.' });
 
